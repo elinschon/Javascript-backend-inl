@@ -26,9 +26,7 @@ function Row({ title, fetchURL, isLargeRow = false }) {
       <div className="movies">
         {movies.map((movie) => {
           return (
-            <div className="movie">
               <MovieCard key={movie.id} movie={movie} />
-            </div>
           );
         })}
       </div>

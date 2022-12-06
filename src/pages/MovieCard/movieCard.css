@@ -1,3 +1,7 @@
+.movieCard {
+    cursor: pointer;
+}
+
 .movieImage{
     width: 200px;
 }
