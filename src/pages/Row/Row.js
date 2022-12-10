@@ -4,8 +4,9 @@ import "./row.css";
 import MovieCard from "../MovieCard/MovieCard";
 
 //tar in title, fetchURL och isLargeRow som props
-function Row({ title, fetchURL, isLargeRow = false }) {
+function Row({ title, fetchURL, isLargeRow = false, addRecentlyViewed}) {
   const [movies, setMovies] = useState([]);
+  // , recentlyViewed, setRecentlyViewed
 
   useEffect(() => {
     async function fetchData() {
@@ -20,13 +21,22 @@ function Row({ title, fetchURL, isLargeRow = false }) {
     fetchData();
   }, [fetchURL]);
 
+//   function addRecentlyViewed({ movie }) {
+//     console.log(movie);
+//     let arr = [];
+//     arr.push(movie);
+//     setRecentlyViewed(arr);
+//     console.log(recentlyViewed);
+   
+// }
+
   return (
     <section className="row">
       <h1>{title}</h1>
       <div className="movies">
         {movies.map((movie) => {
           return (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard key={movie.id} movie={movie} addRecentlyViewed={addRecentlyViewed}/>
           );
         })}
       </div>

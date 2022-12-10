@@ -3,7 +3,6 @@ import './header.css';
 // import SearchBar from '../SearchBar/SearchBar';
 
 export default function Header( { searchedMovies, setSearchedMovies}) {
-    // const [searchedMovie, setSearchedMovie] = useState([]);
   const [query, setQuery] = useState("");
 
   const API_KEY = "bf920c0eccef0a5571a534bbb27fffc5";
@@ -16,7 +15,6 @@ export default function Header( { searchedMovies, setSearchedMovies}) {
 
     if (data.results) {
       setSearchedMovies(data.results);
-      // console.log(searchedMovies);
     }
   };
 
@@ -32,9 +30,8 @@ export default function Header( { searchedMovies, setSearchedMovies}) {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value, console.log(query))}
+        onChange={(e) => setQuery(e.target.value)}
         placeholder="Search movie..."
-        // onChange={(event) => props.setSearchValue(event.target.value)}
       />
     </div>
             </div>
